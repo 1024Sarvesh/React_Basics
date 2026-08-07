@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    color: white;
+}
+
+/* HEADER */
+.header{
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1200px;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo{
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+.logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    gap: 32px;
+}
+
+.navbar a{
+    position: relative;
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover{
+    color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+/* Underline animation */
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+    width: 100%;
+}
+
+.navbar a.active{
+    color: #38bdf8;
+}
+
+/* BUTTON */
+.header-btn{
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 20px rgba(56,189,248,0.35);
+}
+
+.header-btn:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(99,102,241,0.45);
+}
+
+.header-btn:active{
+    transform: translateY(0) scale(0.98);
+}
+
+aside>ul{
+display: flex;
+gap: 20px;
+padding: 20px;
+}
+aside>ul>li{
+list-style: none;
+}
+aside>ul>li>a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.movies-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    padding-left: 130px;
+    gap:30px;
+    width:100%;
+    max-width:1200px;
+}
+
+.movie-card{
+    background:#1f2937;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.35s;
+    cursor:pointer;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.movie-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.poster{
+    position:relative;
+    height:250px;
+    overflow:hidden;
+}
+
+.poster img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.movie-card:hover .poster img{
+    transform:scale(1.08);
+}
+
+.rating{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#facc15;
+    color:#111;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.content{
+    padding:22px;
+}
+
+.content h2{
+    color:#fff;
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.content p{
+    color:#bdbdbd;
+    line-height:1.6;
+    font-size:15px;
+    margin-bottom:22px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.content>button{
+    border:none;
+    background:pink;
+    color:red;
+    padding:14px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.content>button:hover{
+    background:#ff1f2d;
+    color: white;
+
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .header{
+       display: grid;
+       grid-template-columns: auto auto;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .navbar{
+       display: none;
+    }
+
+    .header-btn{
+        width: 100%;
+        max-width: 220px;
+    }
+    .Drawer{
+        display: block;
+    }
+}
